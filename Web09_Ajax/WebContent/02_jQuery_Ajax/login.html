@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HW1</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<h1>로그인 페이지</h1>
+	<div id="output">
+		<p>아이디<br><input type="text" id="userId" placeholder="아이디 입력"></p>
+		<p>비밀번호<br><input type="password" id="password" placeholder="비밀번호 입력"></p>
+		<button id="login">로그인</button>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		  // Ajax 요청을 보냄
+		  $("#login").click(function() {
+		    var id = $("#userId").val(); // input의 userId의 value값을 저장하는 변수
+			var pw = $("#password").val();
+		    console.log("id : " + id);
+			console.log("pw : " + pw);
+		    $.ajax({
+		      type : "get",
+		      url : "../login.do",
+		      data : {
+		        userId : id, // request parameter를 userId로 지정
+		        password : pw // request parameter를 password로 지정
+		      },
+		      success : function(result) {
+		        console.log(result);
+		        if(result == "success") {
+		          alert("로그인 성공");
+		          $("#output").html(result);
+		        } else {
+		          alert("로그인 실패");
+		        }
+		      }
+		    }); // end ajax
+		  }); // end click()
+		}); // end document	
+	</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+	"name" : "go",
+	"age" : 45,
+	"pets" : [
+		{"animal" : "dino", "name" : "dooly" },
+		{"animal" : "bird", "name" : "ddochi" }, 
+		{"animal" : "clown", "name" : "douner" }
+	]
+}

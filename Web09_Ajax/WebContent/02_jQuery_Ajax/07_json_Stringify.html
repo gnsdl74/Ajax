@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<p id="output1"></p>
+	
+	<script type="text/javascript">
+		var obj = { name : "고길동", age : 45, city : "서울"};
+		var myJSON = JSON.stringify(obj); // 객체를 string으로 변경
+		document.getElementById("output1").innerHTML = myJSON;
+	</script>
+	
+	<p id="output2"></p>
+	
+	<script type="text/javascript">
+		var arr = ["둘리", "또치", "마이콜"];
+		var myJSON = JSON.stringify(arr); // 배열을 string으로 변경
+		document.getElementById("output2").innerHTML = myJSON;
+	</script>
+</body>
+</html>
